@@ -1,0 +1,29 @@
+<div class="container mt-3">
+  <h2>List Product</h2>
+  <p>Những sản phẩm trở về tuổi thơ</p>
+  <table class="table">
+    <thead>
+    <tr>
+      <th>ID</th>
+      <th>Name</th>
+      <th>Img</th>
+      <th>Price</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr *ngFor="let p of products">
+      <td>{{p.id}}</td>
+      <td>{{p.name}}</td>
+      <td><img src="{{p.img}}" width="200" height="200"></td>
+      <td>{{p.price}}</td>
+      <td>
+        <button type="button" class="btn btn-warning" routerLink="/edit/{{p.id}}">Edit</button>
+      </td>
+      <td>
+        <button type="button" class="btn btn-danger" (click)="delete(p.id)">Delete</button>
+      </td>
+    </tr>
+
+    </tbody>
+  </table>
+</div>
